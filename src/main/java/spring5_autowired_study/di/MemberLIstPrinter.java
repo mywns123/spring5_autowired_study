@@ -5,9 +5,9 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class MemberLIstPrinter {
-	@Autowired
+	
 	private MemberDao memberDao;
-	@Autowired
+	
 	private MemberPrinter printer;
 
 	public MemberLIstPrinter() {
@@ -27,8 +27,9 @@ public class MemberLIstPrinter {
 		this.memberDao = memberDao;
 	}
 	@Autowired
-	public void setPrinter(MemberPrinter printer) {
-		this.printer = printer;
+	
+	public void setPrinter(MemberPrinter memberPrinter) {
+		this.printer = memberPrinter;
 	}
 
 }

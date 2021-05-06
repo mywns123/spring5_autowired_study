@@ -1,5 +1,6 @@
 package spring5_autowired_study.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,6 +9,8 @@ import spring5_autowired_study.di.MemberDao;
 import spring5_autowired_study.di.MemberInfoPrinter;
 import spring5_autowired_study.di.MemberLIstPrinter;
 import spring5_autowired_study.di.MemberPrinter;
+import spring5_autowired_study.di.MemberPrn1;
+import spring5_autowired_study.di.MemberPrn2;
 import spring5_autowired_study.di.MemberRegisterService;
 import spring5_autowired_study.di.VersionPrinter;
 
@@ -30,6 +33,16 @@ public class AppCix {
 		return new MemberPrinter();
 	}
 
+	@Bean
+	@Qualifier("printer1")
+	public MemberPrinter memberPrinter1() {
+		return new MemberPrn1();
+	}
+	@Bean
+	@Qualifier("printer2")
+	public MemberPrinter memberPrinter2() {
+		return new MemberPrn2();
+	}
 	@Bean
 	public MemberLIstPrinter listPrinter() {
 		return new MemberLIstPrinter();
